@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="moodTrackingViewModel"
+            type="com.kseyko.moodtracking.ui.viewmodel.MoodTrackingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.MoodTrackingFragment">
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:enabled="@{moodTrackingViewModel.startButtonIsEnable}"
+            android:onClick="@{()->moodTrackingViewModel.startMood()}"
+            android:text="@string/start"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:enabled="@{moodTrackingViewModel.finishButtonIsEnable}"
+            android:onClick="@{()-> moodTrackingViewModel.finishMood()}"
+            android:text="@string/finish"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--        <ScrollView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            app:layout_constraintBottom_toTopOf="@+id/clear"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--             app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/finish">-->
+
+        <!--            <TextView-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="@{moodTrackingViewModel.moodString}" />-->
+        <!--        </ScrollView>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mood_RecyclerList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/clear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/finish"></androidx.recyclerview.widget.RecyclerView>
+
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:enabled="@{moodTrackingViewModel.clearButtonIsEnable}"
+            android:onClick="@{()->moodTrackingViewModel.deleteAllMood() }"
+            android:text="Clear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
