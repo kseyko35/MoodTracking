@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/moodTrackingFragment">
+
+    <fragment
+        android:id="@+id/moodTrackingFragment"
+        android:name="com.kseyko.moodtracking.ui.fragment.MoodTrackingFragment"
+        android:label="mood_tracking_fragment"
+        tools:layout="@layout/mood_tracking_fragment">
+        <action
+            android:id="@+id/action_moodTrackingFragment_to_moodQualityFragment"
+            app:destination="@id/moodQualityFragment"
+            app:enterAnim="@anim/swipe_right"
+            app:popEnterAnim="@anim/swipe_right" />
+        <action
+            android:id="@+id/action_moodTrackingFragment_to_moodDetailFragment"
+            app:destination="@id/moodDetailFragment"
+            app:enterAnim="@anim/swipe_right"
+            app:popEnterAnim="@anim/swipe_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/moodQualityFragment"
+        android:name="com.kseyko.moodtracking.ui.fragment.MoodQualityFragment"
+        android:label="mood_quality_fragment"
+        tools:layout="@layout/mood_quality_fragment">
+
+
+        <action
+            android:id="@+id/action_moodQualityFragment_to_moodTrackingFragment"
+            app:destination="@id/moodTrackingFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/moodTrackingFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="moodId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/moodDetailFragment"
+        android:name="com.kseyko.moodtracking.ui.fragment.MoodDetailFragment"
+        android:label="mood_detail_fragment"
+        tools:layout="@layout/mood_detail_fragment">
+        <action
+            android:id="@+id/action_moodDetailFragment_to_moodTrackingFragment"
+            app:destination="@id/moodTrackingFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/moodTrackingFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="moodId"
+            app:argType="long" />
+    </fragment>
+</navigation>
