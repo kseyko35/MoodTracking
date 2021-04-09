@@ -1,3 +1,33 @@
 <resources>
     <string name="app_name">MoodTracking</string>
+
+    <string name="how_is_mood">How was your mood in sleep time?</string>
+    <string name="mood_0">Aç</string>
+    <string name="mood_1">Sinirli</string>
+    <string name="mood_2">Endişeli</string>
+    <string name="mood_3">Ağlıyor</string>
+    <string name="mood_4">Hunharca Gülüyor</string>
+    <string name="mood_5">Normal</string>
+    <string name="mood_6">Düşünceli</string>
+    <string name="mood_7">Aşık</string>
+    <string name="mood_8">Uykulu</string>
+
+
+    <string name="header">YOUR MOOD DATA</string>
+    <string name="start_time"><![CDATA[<b>START:</b>]]></string>
+    <string name="finish_time"><![CDATA[<b>FINISH:</b>]]></string>
+    <string name="mood"><![CDATA[<b>MOOD:</b>]]></string>
+    <string name="mood_duration"><![CDATA[<b>HOUR:MINUTE:SECOND</b>]]></string>
+
+
+    <string name="start">Start</string>
+    <string name="finish">Finish</string>
+
+
+    <string name="minutes_length">%d minutes on %s</string>
+    <string name="hours_length">%d hours on %s</string>
+    <string name="seconds_length">%d seconds on %s</string>
+    <string name="close">Close</string>
+    <string name="delete">Delete</string>
+    <string name="header_text">Sleep Results</string>
 </resources>

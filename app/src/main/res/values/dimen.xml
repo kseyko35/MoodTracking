@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="g_margin">8dp</dimen>
+    <dimen name="normal_metin_boyutu">18sp</dimen>
+    <dimen name="soru_metin_boyutu">20sp</dimen>
+
+    <dimen name="padding">16dp</dimen>
+    <dimen name="duygu_satir_metin_boyutu">24sp</dimen>
+    <dimen name="icon_boyutu">64dp</dimen>
+
+
+    <dimen name="margin">16dp</dimen>
+    <dimen name="icon_size">88dp</dimen>
+    <dimen name="title_text_size">20sp</dimen>
+    <dimen name="triple_margin">48dp</dimen>
+</resources>
