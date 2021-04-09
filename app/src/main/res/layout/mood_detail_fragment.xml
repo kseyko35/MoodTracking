@@ -1,0 +1,66 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Data to make available to the XML via data binding. In this case,
+ the whole ViewModel, so that we can access the LiveData,
+ click handlers, and state variables. -->
+    <data>
+
+        <variable
+            name="moodDetailViewModel"
+            type="com.kseyko.moodtracking.ui.viewmodel.MoodDetailViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/soru_metin_boyutu"
+            app:moodDurationFormatted="@{moodDetailViewModel.mood}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/soru_metin_boyutu"
+            app:moodQualityString="@{moodDetailViewModel.mood}" />
+
+        <ImageView
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_margin="@dimen/g_margin"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            app:moodImage="@{moodDetailViewModel.mood}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/g_margin"
+                android:layout_weight="1"
+                android:onClick="@{()->moodDetailViewModel.onClickClose()}"
+                android:text="@string/close"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/g_margin"
+                android:layout_weight="1"
+                android:onClick="@{()->moodDetailViewModel.deleteMood()}"
+                android:text="@string/delete"
+                tools:ignore="ButtonStyle" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>
